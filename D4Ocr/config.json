@@ -1,0 +1,50 @@
+﻿{
+  "resolution": {
+    "width": "2560",
+    "height": "1600"
+  },
+  "affixes": {
+    "weapon": [
+      "dexterity",
+      "all stats",
+      "damage to close",
+      "damage to crowd"
+    ],
+    "helm": [
+      "cooldown reduction",
+      "ranks of poison"
+    ],
+    "amulet": [
+      "damage reduction while",
+      "ranks of all imbuement",
+      "ranks of the frigid"
+    ],
+    "ring": [
+      "critical strike chance",
+      "maximum life",
+      "lucky hit chance"
+    ],
+    "boots": [
+      "willpower",
+      "slow duration",
+      "energy cost reduction"
+    ],
+    "pants": [
+      "shadow resistance",
+      "dexterity",
+      "all stats"
+    ],
+    "gloves": [
+      "critical strike chance",
+      "critical strike damage",
+      "trap skill arm time",
+      "rank of rapid"
+    ],
+    "chest": [
+      "total armor",
+      "maximum life",
+      "damage reduction from close",
+      "distant enemies"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D4Ocr", "D4Ocr\D4Ocr.csproj", "{300471AA-192D-42A9-8AC0-D3AF3DB1D545}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D4Ocr.Test", "D4Ocr.Test\D4Ocr.Test.csproj", "{B73067D0-0C6D-4EF7-BEBA-CD0940B99685}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{300471AA-192D-42A9-8AC0-D3AF3DB1D545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{300471AA-192D-42A9-8AC0-D3AF3DB1D545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{300471AA-192D-42A9-8AC0-D3AF3DB1D545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{300471AA-192D-42A9-8AC0-D3AF3DB1D545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B73067D0-0C6D-4EF7-BEBA-CD0940B99685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B73067D0-0C6D-4EF7-BEBA-CD0940B99685}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B73067D0-0C6D-4EF7-BEBA-CD0940B99685}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B73067D0-0C6D-4EF7-BEBA-CD0940B99685}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
