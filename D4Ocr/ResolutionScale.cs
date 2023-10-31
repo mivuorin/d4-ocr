@@ -1,6 +1,6 @@
-﻿namespace D4Ocr;
+﻿using GameOverlay.Drawing;
 
-using GameOverlay.Drawing;
+namespace D4Ocr;
 
 public class ResolutionScale
 {

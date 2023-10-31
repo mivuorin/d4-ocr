@@ -48,8 +48,8 @@ https://github.com/michel-pi/GameOverlay.Net
 
 ### Problem: Capture size is smaller than rendered size
 
-Diablo 4 runs on borderless windowed resolution and uses dynamic resolution scaling.
-So actual rendered resolution can be different than screen captured resolution, which means that there is need for scaling captured pixel coordinates into game resolution coordinates.
+Diablo 4 runs on borderless windowed resolution and uses dynamic resolution scaling which can be different from desktop resolution.
+Game overlay runs in desktop resolution which means that there is need for scaling captured pixel coordinates into game resolution coordinates.
 
 This is solved with configurable game resolution setting in app.config.
 
@@ -57,6 +57,3 @@ This is solved with configurable game resolution setting in app.config.
 
 Use non obstructive highlights which dont affect next OCR captures.
 
-### Bug: Screen capture is smaller than rendered full screen.
-
-There seems to be some bug on screen capture code which causes this. Check debugged image captures.

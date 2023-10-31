@@ -1,16 +1,16 @@
-﻿namespace D4Ocr;
+﻿using System.Diagnostics;
 
-using System.Diagnostics;
+namespace D4Ocr;
 
 public static class ProcessLocator
 {
-    public static IntPtr MainHandle()
+    public static IntPtr MainHandle(string processName)
     {
-        var process = Process.GetProcessesByName("Diablo IV").FirstOrDefault();
+        var process = Process.GetProcessesByName(processName).FirstOrDefault();
 
         if (process == null)
         {
-            throw new InvalidOperationException("Diablo IV process not found.");
+            throw new InvalidOperationException($"{processName} process not found.");
         }
 
         return process.MainWindowHandle;

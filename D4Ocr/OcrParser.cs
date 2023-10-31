@@ -1,13 +1,11 @@
-﻿using GameOverlay.Drawing;
+﻿using System.Drawing;
 using Tesseract;
+using Rectangle = GameOverlay.Drawing.Rectangle;
 
 namespace D4Ocr;
 
 public class OcrParser
 {
-    private readonly TesseractEngine _engine;
-    private readonly Dictionary<string, string[]> _godRolls;
-
     private static readonly Dictionary<string, string> ItemTypes = new()
     {
         { "helm", "helm" },
@@ -17,8 +15,11 @@ public class OcrParser
         { "boots", "boots" },
         { "pants", "pants" },
         { "gloves", "gloves" },
-        { "chest", "chest" },
+        { "chest", "chest" }
     };
+
+    private readonly TesseractEngine _engine;
+    private readonly Dictionary<string, string[]> _godRolls;
 
     public OcrParser(TesseractEngine engine, Dictionary<string, string[]> godRolls)
     {
@@ -26,7 +27,7 @@ public class OcrParser
         _godRolls = godRolls;
     }
 
-    public IEnumerable<Rectangle> Identify(System.Drawing.Bitmap bitmap)
+    public IEnumerable<Rectangle> Identify(Bitmap bitmap)
     {
         using var pix = PixConverter.ToPix(bitmap);
         using var page = _engine.Process(pix);

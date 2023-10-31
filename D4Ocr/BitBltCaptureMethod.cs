@@ -1,14 +1,21 @@
-﻿namespace D4Ocr;
-
-using System.Drawing;
+﻿using System.Drawing;
 using PInvoke;
 
-public static class ScreenCapture
-{
-    const int SRCCOPY = 0x00CC0020;
-    const int CAPTUREBLT = 0x40000000;
+namespace D4Ocr;
 
-    public static Bitmap Capture(IntPtr source)
+public class BitBltCaptureMethod : ICaptureMethod
+{
+    private const int SRCCOPY = 0x00CC0020;
+    private const int CAPTUREBLT = 0x40000000;
+
+    private readonly IntPtr _source;
+
+    public BitBltCaptureMethod(IntPtr source)
+    {
+        _source = source;
+    }
+
+    public Bitmap Capture()
     {
         IntPtr bitmap = 0;
         IntPtr oldBitmap = 0;
@@ -19,8 +26,8 @@ public static class ScreenCapture
 
         try
         {
-            var bounds = Window.Resolution(source);
-            
+            var bounds = Window.Resolution(_source);
+
             bitmap = Gdi32.CreateCompatibleBitmap(desktopDc, bounds.Width, bounds.Height);
             oldBitmap = Gdi32.SelectObject(memoryDc, bitmap);
 

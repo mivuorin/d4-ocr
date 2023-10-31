@@ -1,6 +1,6 @@
-﻿namespace D4Ocr;
+﻿using PInvoke;
 
-using PInvoke;
+namespace D4Ocr;
 
 public static class Window
 {

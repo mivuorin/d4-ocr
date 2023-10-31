@@ -1,6 +1,7 @@
+using System.Drawing;
 using System.Reflection;
-using GameOverlay.Drawing;
 using Tesseract;
+using Rectangle = GameOverlay.Drawing.Rectangle;
 
 namespace D4Ocr.Test;
 
@@ -14,7 +15,7 @@ public class OcrTest
     {
         _engine = new TesseractEngine(@"./tessdata", "eng", EngineMode.Default);
 
-        var godRolls = new Dictionary<string, string[]>()
+        var godRolls = new Dictionary<string, string[]>
         {
             { "weapon", new[] { "dexterity", "all stats" } },
             { "helm", new[] { "resistance", "cold imbuement" } },
@@ -26,18 +27,18 @@ public class OcrTest
                 "gloves",
                 new[] { "critical strike chance", "critical strike damage", "trap skill arm time", "rank of rapid" }
             },
-            { "chest", new[] { "total armor", "maximum life", "damage reduction from close", "distant enemies" } },
+            { "chest", new[] { "total armor", "maximum life", "damage reduction from close", "distant enemies" } }
         };
 
         _ocrParser = new OcrParser(_engine, godRolls);
     }
 
-    private System.Drawing.Bitmap Resource(string imageName)
+    private Bitmap Resource(string imageName)
     {
         using var stream = Assembly
             .GetExecutingAssembly()
             .GetManifestResourceStream($"D4Ocr.Test.{imageName}.png");
-        return new System.Drawing.Bitmap(stream!);
+        return new Bitmap(stream!);
     }
 
     [OneTimeTearDown]

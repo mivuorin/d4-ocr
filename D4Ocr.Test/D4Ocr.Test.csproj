@@ -21,19 +21,19 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Include="amulet.png" />
-      <EmbeddedResource Include="armor.png" />
-      <EmbeddedResource Include="boots.png" />
-      <EmbeddedResource Include="gloves.png" />
-      <EmbeddedResource Include="helmet.png" />
-      <EmbeddedResource Include="pants.png" />
-      <EmbeddedResource Include="ring.png" />
-      <EmbeddedResource Include="weapon-bow.png" />
-      <EmbeddedResource Include="weapon-dagger.png" />
+        <EmbeddedResource Include="amulet.png" />
+        <EmbeddedResource Include="armor.png" />
+        <EmbeddedResource Include="boots.png" />
+        <EmbeddedResource Include="gloves.png" />
+        <EmbeddedResource Include="helmet.png" />
+        <EmbeddedResource Include="pants.png" />
+        <EmbeddedResource Include="ring.png" />
+        <EmbeddedResource Include="weapon-bow.png" />
+        <EmbeddedResource Include="weapon-dagger.png" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\D4Ocr\D4Ocr.csproj" />
+        <ProjectReference Include="..\D4Ocr\D4Ocr.csproj" />
     </ItemGroup>
 
 </Project>
