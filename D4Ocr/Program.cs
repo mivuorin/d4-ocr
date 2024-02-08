@@ -1,6 +1,5 @@
 ﻿using D4Ocr;
 using Microsoft.Extensions.Configuration;
-using Tesseract;
 
 Console.WriteLine("Diablo 4 OCR");
 
@@ -22,7 +21,7 @@ if (godRolls is null)
 }
 
 Console.WriteLine("Initializing OCR Engine");
-using var engine = new TesseractEngine(@"./tessdata", "eng", EngineMode.Default);
+using var engine = TesseractEngineFactory.Create();
 
 var parser = new OcrParser(engine, godRolls);
 

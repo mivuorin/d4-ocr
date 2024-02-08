@@ -13,7 +13,7 @@ public class OcrTest
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
-        _engine = new TesseractEngine(@"./tessdata", "eng", EngineMode.Default);
+        _engine = TesseractEngineFactory.Create();
 
         var godRolls = new Dictionary<string, string[]>
         {
