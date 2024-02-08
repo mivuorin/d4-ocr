@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace D4Ocr;
+namespace D4Ocr.Capture;
 
 public interface ICaptureMethod
 {

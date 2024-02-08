@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using PInvoke;
 
-namespace D4Ocr;
+namespace D4Ocr.Capture;
 
 public class BitBltCaptureMethod : ICaptureMethod
 {

@@ -1,4 +1,6 @@
-﻿namespace D4Ocr;
+using D4Ocr.Capture;
+
+namespace D4Ocr;
 
 public class TooltipProvider
 {
@@ -26,25 +28,10 @@ public class TooltipProvider
         }
 
         var token = (CancellationToken)state;
-
-        var debugImageCount = 0;
-
         while (!token.IsCancellationRequested)
         {
             using var bitmap = _captureMethod.Capture();
 
-            if (_appState.Debug)
-            {
-                bitmap.Save($@"c:\temp\debug-{debugImageCount++}.png");
-                Console.WriteLine("Debug screenshot saved!");
-            
-                if (debugImageCount > 10)
-                {
-                    _appState.Debug = false;
-                    debugImageCount = 0;
-                    Console.WriteLine("Debug stopped.");
-                }
-            }
 
             var identified = _ocrParser.Identify(bitmap);
 

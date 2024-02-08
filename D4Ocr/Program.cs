@@ -1,4 +1,5 @@
 ﻿using D4Ocr;
+using D4Ocr.Capture;
 using Microsoft.Extensions.Configuration;
 
 Console.WriteLine("Diablo 4 OCR");
@@ -35,8 +36,10 @@ Console.WriteLine("Game resolution {0}x{1}", gameResolution.Width, gameResolutio
 var scale = new ResolutionScale(desktopResolution, gameResolution);
 
 var appState = new ApplicationState();
+
 var captureMethod = new GraphicsCopyFromScreenMethod(gameResolution);
-var tooltipProvider = new TooltipProvider(appState, captureMethod, parser);
+var captureDebugger = new CaptureDebugger(captureMethod, appState);
+var tooltipProvider = new TooltipProvider(appState, captureDebugger, parser);
 
 Console.WriteLine("Running overlay");
 using var overlay = new Overlay(scale, handle, appState);
