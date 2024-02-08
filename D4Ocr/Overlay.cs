@@ -85,7 +85,7 @@ public class Overlay : IDisposable
         {
             var scaled = _scale.Scale(tooltip);
 
-            // Make sure overlay icon does not obfuscate OCR
+            // Make sure overlay icon does not obfuscate OCR by drawing over text
             gfx.FillCircle(_brushes["green"], scaled.Left - 4f, scaled.Top + 5, 8);
         }
     }

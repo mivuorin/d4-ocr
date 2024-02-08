@@ -25,11 +25,9 @@ using var engine = TesseractEngineFactory.Create();
 
 var parser = new OcrParser(engine, godRolls);
 
-// TODO Not really needed when capturing desktop
 Console.WriteLine("Locating Diablo 4 process");
 var handle = ProcessLocator.MainHandle("Diablo IV");
 
-// TODO Refactor to use GetDesktopHandle
 var desktopResolution = Window.Resolution(handle);
 Console.WriteLine("Desktop resolution {0}x{1}", desktopResolution.Width, desktopResolution.Height);
 Console.WriteLine("Game resolution {0}x{1}", gameResolution.Width, gameResolution.Height);
@@ -48,7 +46,9 @@ Console.WriteLine("Running screen capturing");
 var cts = new CancellationTokenSource();
 tooltipProvider.Run(cts.Token);
 
-Console.WriteLine("Game time! Press Q to quit OCR...");
+Console.WriteLine("Game time!");
+Console.WriteLine("Press D to store next 10 captures into debug folder.");
+Console.WriteLine("Press Q to quit OCR...");
 while (!cts.Token.IsCancellationRequested)
 {
     var key = Console.ReadKey(true);
