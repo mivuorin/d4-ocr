@@ -1,3 +1,4 @@
+﻿using System.Diagnostics;
 using D4Ocr.Capture;
 
 namespace D4Ocr;
@@ -30,10 +31,12 @@ public class TooltipProvider
         var token = (CancellationToken)state;
         while (!token.IsCancellationRequested)
         {
+            var sw = Stopwatch.StartNew();
             using var bitmap = _captureMethod.Capture();
-
-
             var identified = _ocrParser.Identify(bitmap);
+
+            sw.Stop();
+            _appState.MeasuredMs = sw.ElapsedMilliseconds;
 
             _appState.Tooltips.Clear();
             foreach (var r in identified)

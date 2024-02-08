@@ -73,9 +73,7 @@ public class Overlay : IDisposable
         var padding = 8;
         var infoText = new StringBuilder()
             .Append("FPS: ").Append(gfx.FPS.ToString().PadRight(padding))
-            .Append("FrameTime: ").Append(e.FrameTime.ToString().PadRight(padding))
-            .Append("FrameCount: ").Append(e.FrameCount.ToString().PadRight(padding))
-            .Append("DeltaTime: ").Append(e.DeltaTime.ToString().PadRight(padding))
+            .Append("Measured ms: ").Append(_appState.MeasuredMs.ToString().PadRight(padding))
             .Append("Affixes: ").Append(_appState.Tooltips.Count.ToString().PadRight(padding))
             .ToString();
 

@@ -12,6 +12,7 @@ public class ApplicationState
     {
         Tooltips = new ConcurrentBag<Rectangle>();
         Debug = false;
+        MeasuredMs = 0;
     }
 
     public ConcurrentBag<Rectangle> Tooltips { get; }
@@ -34,4 +35,6 @@ public class ApplicationState
             }
         }
     }
+
+    public long MeasuredMs { get; set; }
 }

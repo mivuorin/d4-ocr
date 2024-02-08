@@ -33,8 +33,6 @@ public class OcrParser
         using var page = _engine.Process(pix);
         using var iter = page.GetIterator();
 
-        iter.Begin();
-
         var identifiedAffixes = new List<Rectangle>();
         string? itemType = null;
 
